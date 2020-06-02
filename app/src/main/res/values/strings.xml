@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Финансовый калькулятор</string>
+
+    <string name="button_deposit">Вклад</string>
+    <string name="button_credit">Кредит</string>
+
+    <string name="deposit_first_sum_hint">Начальная сумма</string>
+    <string name="deposit_interest_rate_hint">Процентная ставка</string>
+    <string name="deposit_year_hint">Год</string>
+    <string name="deposit_month_hint">Месяц</string>
+    <string name="deposit_additional_sum_hint">Доп. вложения</string>
+    <string name="deposit_button_calculate">Посчитать</string>
+
+    <string name="deposit_total_hint">Итого</string>
+    <string name="deposit_profit_hint">Прибыль</string>
+    <string name="deposit_additional_sum_total_hint">Сумма доп. вложений</string>
+</resources>

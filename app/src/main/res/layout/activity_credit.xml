@@ -6,13 +6,96 @@
     android:layout_height="match_parent"
     tools:context=".CreditActivity">
 
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
+        android:id="@+id/linearLayoutCredit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_credit"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2">
+
+        <EditText
+            android:id="@+id/textFirstSumCredit"
+            android:hint="@string/credit_first_sum_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/textInterestRateCredit"
+            android:hint="@string/credit_interest_rate_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/textYearCredit"
+            android:hint="@string/credit_year_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/textMonthCredit"
+            android:hint="@string/credit_month_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <ToggleButton
+            android:id="@+id/CreditTypePayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textOn="@string/credit_payment_type_annuity"
+            android:textOff="@string/credit_payment_type_differentiated"
+            android:checked="true"/>
+
+        <Button
+            android:id="@+id/buttonCalculateCredit"
+            android:onClick="onClickCalculateCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_button_calculate"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCredit">
+
+        <EditText
+            android:id="@+id/textTotalCredit"
+            android:hint="@string/credit_total_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/textInterestChargeCredit"
+            android:hint="@string/credit_interest_charge_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/textMonthlyInstallmentCredit"
+            android:hint="@string/credit_monthly_installment_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

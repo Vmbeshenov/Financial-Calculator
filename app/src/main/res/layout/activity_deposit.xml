@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3">
+        app:layout_constraintVertical_bias="0.2">
 
         <EditText
             android:id="@+id/textFirstSum"
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/textInterestRate"
@@ -49,13 +49,19 @@
             android:ems="10"
             android:inputType="number" />
 
+        <CheckBox
+            android:id="@+id/checkBoxCapitalization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deposit_capitalization" />
+
         <EditText
             android:id="@+id/textAdditionalSum"
             android:hint="@string/deposit_additional_sum_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
 
         <Button
             android:id="@+id/buttonCalculateDeposit"
@@ -80,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/textProfit"
@@ -88,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/textAdditionalSumTotal"
@@ -96,6 +102,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -13,24 +13,34 @@ public class Deposit {
     double additional_sum_total;
 
     public Deposit() {
+        first_sum = 0;
+        interest_rate = 0;
+        year = 0;
+        month = 0;
+        additional_sum = 0;
+
+        total = 0;
+        profit = 0;
+        additional_sum_total = 0;
     }
 
-    public Deposit(double first_sum, double interest_rate, int year, int month, double additional_sum){
-        this.first_sum = first_sum;
-        this.interest_rate = interest_rate;
-        this.year = year;
-        this.month = month;
-        this.additional_sum = additional_sum;
-    }
-
-    public void CalculateDeposit(){
-        total = first_sum;
-        for (int i = 0; i < year; i++) {
-            total += total * interest_rate / 100 + additional_sum;
-            additional_sum_total += additional_sum;
+    public void CalculateDeposit(boolean capitalization){
+        if (!capitalization) {
+            total = first_sum;
+            for (int i = 0; i < year; i++) {
+                total += total * interest_rate / 100 + additional_sum;
+                additional_sum_total += additional_sum;
+            }
+            total += total * interest_rate / 100 / 12 * month;
         }
-        total += total * interest_rate / 100 / 12 * month;
 
+        if(capitalization) {
+            total = first_sum;
+            for (int j = 0; j < (year * 12 + month); j++){
+                total += total * interest_rate / 100 / 12 + additional_sum;
+                additional_sum_total += additional_sum;
+            }
+        }
         profit = total - first_sum - additional_sum_total;
     }
 

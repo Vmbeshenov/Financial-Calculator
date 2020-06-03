@@ -9,9 +9,20 @@
     <string name="deposit_year_hint">Год</string>
     <string name="deposit_month_hint">Месяц</string>
     <string name="deposit_additional_sum_hint">Доп. вложения</string>
+    <string name="deposit_capitalization">Капитализация</string>
     <string name="deposit_button_calculate">Посчитать</string>
-
     <string name="deposit_total_hint">Итого</string>
     <string name="deposit_profit_hint">Прибыль</string>
     <string name="deposit_additional_sum_total_hint">Сумма доп. вложений</string>
+
+    <string name="credit_first_sum_hint">Сумма кредита</string>
+    <string name="credit_interest_rate_hint">Процентная ставка</string>
+    <string name="credit_year_hint">Год</string>
+    <string name="credit_month_hint">Месяц</string>
+    <string name="credit_payment_type_annuity">Аннуитетный</string>
+    <string name="credit_payment_type_differentiated">Дифференцированный</string>
+    <string name="credit_button_calculate">Посчитать</string>
+    <string name="credit_total_hint">Итого</string>
+    <string name="credit_interest_charge_hint">Плата за процент</string>
+    <string name="credit_monthly_installment_hint">Ежемесячный платеж</string>
 </resources>

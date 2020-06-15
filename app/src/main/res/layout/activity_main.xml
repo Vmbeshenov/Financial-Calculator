@@ -7,28 +7,40 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:text="@string/title_main_menu"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33">
+        app:layout_constraintVertical_bias="0.25" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <Button
             android:id="@+id/buttonStartDeposit"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="30dp"
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="10dp"
             android:onClick="onClickStartDeposit"
             android:text="@string/button_deposit" />
 
         <Button
             android:id="@+id/buttonStartCredit"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="65dp"
             android:onClick="onClickStartCredit"
             android:text="@string/button_credit" />
     </LinearLayout>

@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreditActivity">
+    tools:context=".DepositResultActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayoutCredit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -20,13 +19,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/credit_initial_sum_hint"
+            android:text="@string/deposit_total_hint"
             android:textSize="16sp"
             android:textStyle="bold|italic"
             android:layout_marginStart="4dp" />
 
         <EditText
-            android:id="@+id/textInitialSumCredit"
+            android:id="@+id/textTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -35,28 +34,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/credit_interest_rate_hint"
-            android:textSize="16sp"
-            android:textStyle="bold|italic"
-            android:layout_marginStart="4dp"/>
-
-        <EditText
-            android:id="@+id/textInterestRateCredit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/credit_year_hint"
+            android:text="@string/deposit_profit_hint"
             android:textSize="16sp"
             android:textStyle="bold|italic"
             android:layout_marginStart="4dp" />
 
         <EditText
-            android:id="@+id/textYearCredit"
+            android:id="@+id/textProfit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -65,36 +49,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/credit_month_hint"
+            android:text="@string/deposit_additional_sum_total_hint"
             android:textSize="16sp"
             android:textStyle="bold|italic"
             android:layout_marginStart="4dp" />
 
         <EditText
-            android:id="@+id/textMonthCredit"
+            android:id="@+id/textAdditionalSumTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number" />
-
-        <ToggleButton
-            android:id="@+id/CreditTypePayment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:textOff="@string/credit_payment_type_differentiated"
-            android:textOn="@string/credit_payment_type_annuity" />
-
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonCalculateCredit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:onClick="onClickCalculateCredit"
-        android:text="@string/credit_button_calculate"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayoutCredit"
-        app:layout_constraintStart_toStartOf="@+id/linearLayoutCredit"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCredit" />
 </android.support.constraint.ConstraintLayout>

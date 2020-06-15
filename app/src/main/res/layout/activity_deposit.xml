@@ -15,35 +15,63 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2">
+        app:layout_constraintVertical_bias="0.4">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deposit_initial_sum_hint"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            android:layout_marginStart="4dp"/>
 
         <EditText
             android:id="@+id/textInitialSum"
-            android:hint="@string/deposit_initial_sum_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deposit_interest_rate_hint"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            android:layout_marginStart="4dp" />
 
         <EditText
             android:id="@+id/textInterestRate"
-            android:hint="@string/deposit_interest_rate_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deposit_year_hint"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            android:layout_marginStart="4dp" />
 
         <EditText
             android:id="@+id/textYear"
-            android:hint="@string/deposit_year_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deposit_month_hint"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            android:layout_marginStart="4dp" />
+
         <EditText
             android:id="@+id/textMonth"
-            android:hint="@string/deposit_month_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -55,53 +83,31 @@
             android:layout_height="wrap_content"
             android:text="@string/deposit_capitalization" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deposit_additional_sum_hint"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            android:layout_marginStart="4dp" />
+
         <EditText
             android:id="@+id/textAdditionalSum"
-            android:hint="@string/deposit_additional_sum_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number" />
 
-        <Button
-            android:id="@+id/buttonCalculateDeposit"
-            android:onClick="onClickCalculateDeposit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/deposit_button_calculate"/>
     </LinearLayout>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/buttonCalculateDeposit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <EditText
-            android:id="@+id/textTotal"
-            android:hint="@string/deposit_total_hint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/textProfit"
-            android:hint="@string/deposit_profit_hint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/textAdditionalSumTotal"
-            android:hint="@string/deposit_additional_sum_total_hint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
-    </LinearLayout>
+        android:layout_marginTop="16dp"
+        android:onClick="onClickCalculateDeposit"
+        android:text="@string/deposit_button_calculate"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,7 @@
 package com.vmb.financialcalculator;
 
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,8 @@ public class DepositActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposit);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     public void onClickCalculateDeposit(View view){
@@ -39,14 +43,9 @@ public class DepositActivity extends AppCompatActivity {
 
         deposit.CalculateDeposit(capitalization);
 
-        EditText total = (EditText) findViewById(R.id.textTotal);
-        total.setText(String.valueOf((long)deposit.getTotal()));
-
-        EditText profit = (EditText) findViewById(R.id.textProfit);
-        profit.setText(String.valueOf((long)deposit.getProfit()));
-
-        EditText additional_sum_total = (EditText) findViewById(R.id.textAdditionalSumTotal);
-        additional_sum_total.setText(String.valueOf((long)deposit.getAdditional_sum_total()));
+        Intent intent = new Intent(this, DepositResultActivity.class);
+        intent.putExtra(Deposit.class.getSimpleName(), deposit);
+        startActivity(intent);
     }
 
     private String CorrectEnterData(String data){

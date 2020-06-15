@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Финансовый калькулятор</string>
 
+    <string name="title_main_menu">Калькулятор</string>
     <string name="button_deposit">Вклад</string>
     <string name="button_credit">Кредит</string>
 

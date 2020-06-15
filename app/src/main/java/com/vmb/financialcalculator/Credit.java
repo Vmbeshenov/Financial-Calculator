@@ -1,6 +1,8 @@
 package com.vmb.financialcalculator;
 
-public class Credit {
+import java.io.Serializable;
+
+public class Credit implements Serializable {
 
     private double initial_sum;
     private double interest_rate;

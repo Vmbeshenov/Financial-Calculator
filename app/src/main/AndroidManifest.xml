@@ -9,8 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CreditActivity"></activity>
-        <activity android:name=".DepositActivity" />
+        <activity
+            android:name=".CreditResultActivity"
+            android:parentActivityName=".CreditActivity"/>
+        <activity
+            android:name=".DepositResultActivity"
+            android:parentActivityName=".DepositActivity" />
+        <activity
+            android:name=".CreditActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DepositActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

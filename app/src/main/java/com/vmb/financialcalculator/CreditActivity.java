@@ -19,8 +19,8 @@ public class CreditActivity extends AppCompatActivity {
         Credit credit = new Credit();
         String enter_data;
 
-        enter_data = CorrectEnterData(((EditText)findViewById(R.id.textFirstSumCredit)).getText().toString());
-        credit.setFirst_sum(Double.parseDouble(enter_data));
+        enter_data = CorrectEnterData(((EditText)findViewById(R.id.textInitialSumCredit)).getText().toString());
+        credit.setInitial_sum(Double.parseDouble(enter_data));
 
         enter_data = CorrectEnterData(((EditText)findViewById(R.id.textInterestRateCredit)).getText().toString());
         credit.setInterest_rate(Double.parseDouble(enter_data));

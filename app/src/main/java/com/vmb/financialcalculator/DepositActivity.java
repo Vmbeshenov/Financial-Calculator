@@ -19,8 +19,8 @@ public class DepositActivity extends AppCompatActivity {
         Deposit deposit = new Deposit();
         String enter_data;
 
-        enter_data = CorrectEnterData(((EditText)findViewById(R.id.textFirstSum)).getText().toString());
-        deposit.setFirst_sum(Double.parseDouble(enter_data));
+        enter_data = CorrectEnterData(((EditText)findViewById(R.id.textInitialSum)).getText().toString());
+        deposit.setInitial_sum(Double.parseDouble(enter_data));
 
         enter_data = CorrectEnterData(((EditText)findViewById(R.id.textInterestRate)).getText().toString());
         deposit.setInterest_rate(Double.parseDouble(enter_data));

@@ -4,7 +4,7 @@
     <string name="button_deposit">Вклад</string>
     <string name="button_credit">Кредит</string>
 
-    <string name="deposit_first_sum_hint">Начальная сумма</string>
+    <string name="deposit_initial_sum_hint">Начальная сумма</string>
     <string name="deposit_interest_rate_hint">Процентная ставка</string>
     <string name="deposit_year_hint">Год</string>
     <string name="deposit_month_hint">Месяц</string>
@@ -15,7 +15,7 @@
     <string name="deposit_profit_hint">Прибыль</string>
     <string name="deposit_additional_sum_total_hint">Сумма доп. вложений</string>
 
-    <string name="credit_first_sum_hint">Сумма кредита</string>
+    <string name="credit_initial_sum_hint">Сумма кредита</string>
     <string name="credit_interest_rate_hint">Процентная ставка</string>
     <string name="credit_year_hint">Год</string>
     <string name="credit_month_hint">Месяц</string>

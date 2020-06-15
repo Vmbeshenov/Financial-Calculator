@@ -18,8 +18,8 @@
         app:layout_constraintVertical_bias="0.2">
 
         <EditText
-            android:id="@+id/textFirstSum"
-            android:hint="@string/deposit_first_sum_hint"
+            android:id="@+id/textInitialSum"
+            android:hint="@string/deposit_initial_sum_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"

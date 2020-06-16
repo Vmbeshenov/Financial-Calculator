@@ -16,6 +16,19 @@ public class CreditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_credit);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        EditText initialSumText = (EditText) findViewById(R.id.textInitialSumCredit);
+        initialSumText.addTextChangedListener(new NumberTextWatcher(initialSumText));
+        initialSumText.setText(R.string.credit_initial_sum);
+
+        EditText interestRateSumText = (EditText) findViewById(R.id.textInterestRateCredit);
+        interestRateSumText.setText(R.string.credit_interest_rate);
+
+        EditText yearText = (EditText) findViewById(R.id.textYearCredit);
+        yearText.setText(R.string.credit_year);
+
+        EditText monthText = (EditText) findViewById(R.id.textMonthCredit);
+        monthText.setText(R.string.credit_month);
     }
 
     public void onClickCalculateCredit(View view){
@@ -49,6 +62,7 @@ public class CreditActivity extends AppCompatActivity {
         if (data.equals("")){
             data = "0";
         }
+        data = data.replaceAll("\\s+","");
         return data;
     }
 }

@@ -19,12 +19,15 @@ public class CreditResultActivity extends AppCompatActivity {
         Credit credit = (Credit) arguments.getSerializable(Credit.class.getSimpleName());
 
         EditText total = (EditText) findViewById(R.id.textTotalCredit);
+        total.addTextChangedListener(new NumberTextWatcher(total));
         total.setText(String.valueOf((long)credit.getTotal()));
 
         EditText interest_charge = (EditText) findViewById(R.id.textInterestChargeCredit);
+        interest_charge.addTextChangedListener(new NumberTextWatcher(interest_charge));
         interest_charge.setText(String.valueOf((long)credit.getInterest_charge()));
 
         EditText monthly_installment = (EditText) findViewById(R.id.textMonthlyInstallmentCredit);
+        monthly_installment.addTextChangedListener(new NumberTextWatcher(monthly_installment));
         monthly_installment.setText(String.valueOf((long)credit.getMonthly_installment()));
     }
 }

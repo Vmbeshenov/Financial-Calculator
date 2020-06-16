@@ -16,6 +16,23 @@ public class DepositActivity extends AppCompatActivity {
         setContentView(R.layout.activity_deposit);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        EditText initialSumText = (EditText) findViewById(R.id.textInitialSum);
+        initialSumText.addTextChangedListener(new NumberTextWatcher(initialSumText));
+        initialSumText.setText(R.string.deposit_initial_sum);
+
+        EditText interestRateSumText = (EditText) findViewById(R.id.textInterestRate);
+        interestRateSumText.setText(R.string.deposit_interest_rate);
+
+        EditText yearText = (EditText) findViewById(R.id.textYear);
+        yearText.setText(R.string.deposit_year);
+
+        EditText monthText = (EditText) findViewById(R.id.textMonth);
+        monthText.setText(R.string.deposit_month);
+
+        EditText additionalSumText = (EditText) findViewById(R.id.textAdditionalSum);
+        additionalSumText.addTextChangedListener(new NumberTextWatcher(additionalSumText));
+        additionalSumText.setText(R.string.deposit_additional_sum);
     }
 
     public void onClickCalculateDeposit(View view){
@@ -52,6 +69,7 @@ public class DepositActivity extends AppCompatActivity {
         if (data.equals("")){
             data = "0";
         }
+        data = data.replaceAll("\\s+","");
         return data;
     }
 }

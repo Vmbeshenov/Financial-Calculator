@@ -66,6 +66,28 @@ public class Deposit implements Serializable {
         this.additional_sum = additional_sum;
     }
 
+
+    public void setInitial_sum(String initial_sum) {
+        this.initial_sum = Double.parseDouble(initial_sum);
+    }
+
+    public void setInterest_rate(String interest_rate) {
+        this.interest_rate = Double.parseDouble(interest_rate);
+    }
+
+    public void setYear(String year) {
+        this.year = Integer.parseInt(year);
+    }
+
+    public void setMonth(String month) {
+        this.month = Integer.parseInt(month);
+    }
+
+    public void setAdditional_sum(String additional_sum) {
+        this.additional_sum = Double.parseDouble(additional_sum);
+    }
+
+
     public double getTotal() {
         return total;
     }

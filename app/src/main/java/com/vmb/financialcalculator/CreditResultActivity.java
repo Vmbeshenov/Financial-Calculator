@@ -1,9 +1,8 @@
 package com.vmb.financialcalculator;
 
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class CreditResultActivity extends AppCompatActivity {
 
@@ -12,22 +11,16 @@ public class CreditResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credit_result);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         Bundle arguments = getIntent().getExtras();
         Credit credit = (Credit) arguments.getSerializable(Credit.class.getSimpleName());
 
-        EditText total = (EditText) findViewById(R.id.textTotalCredit);
-        total.addTextChangedListener(new NumberTextWatcher(total));
-        total.setText(String.valueOf((long)credit.getTotal()));
+        TextView total = findViewById(R.id.textTotalCredit);
+        total.setText(String.format("%,d", (long)credit.getTotal()));
 
-        EditText interest_charge = (EditText) findViewById(R.id.textInterestChargeCredit);
-        interest_charge.addTextChangedListener(new NumberTextWatcher(interest_charge));
-        interest_charge.setText(String.valueOf((long)credit.getInterest_charge()));
+        TextView interest_charge = findViewById(R.id.textInterestChargeCredit);
+        interest_charge.setText(String.format("%,d", (long)credit.getInterest_charge()));
 
-        EditText monthly_installment = (EditText) findViewById(R.id.textMonthlyInstallmentCredit);
-        monthly_installment.addTextChangedListener(new NumberTextWatcher(monthly_installment));
-        monthly_installment.setText(String.valueOf((long)credit.getMonthly_installment()));
+        TextView monthly_installment = findViewById(R.id.textMonthlyInstallmentCredit);
+        monthly_installment.setText(String.format("%,d", (long)credit.getMonthly_installment()));
     }
 }

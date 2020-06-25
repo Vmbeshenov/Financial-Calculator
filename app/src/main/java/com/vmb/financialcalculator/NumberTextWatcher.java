@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 
 public class NumberTextWatcher implements TextWatcher {
@@ -58,10 +59,15 @@ public class NumberTextWatcher implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        if (s.toString().contains(String.valueOf(df.getDecimalFormatSymbols().getDecimalSeparator()))) {
-            hasFractionalPart = true;
-        } else {
-            hasFractionalPart = false;
+        hasFractionalPart = s.toString().contains(String.valueOf(df.getDecimalFormatSymbols().getDecimalSeparator()));
+    }
+
+    public static String GetStringInView(View dataEditText){
+        String data = ((EditText) dataEditText).getText().toString();
+        if (data.equals("")){
+            data = "0";
         }
+        data = data.replaceAll("\\s+","");
+        return data;
     }
 }

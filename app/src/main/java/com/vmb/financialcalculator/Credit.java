@@ -68,6 +68,24 @@ public class Credit implements Serializable {
         this.month = month;
     }
 
+
+    public void setInitial_sum(String initial_sum) {
+        this.initial_sum = Double.parseDouble(initial_sum);
+    }
+
+    public void setInterest_rate(String interest_rate) {
+        this.interest_rate = Double.parseDouble(interest_rate);
+    }
+
+    public void setYear(String year) {
+        this.year = Integer.parseInt(year);
+    }
+
+    public void setMonth(String month) {
+        this.month = Integer.parseInt(month);
+    }
+
+
     public double getTotal() {
         return total;
     }

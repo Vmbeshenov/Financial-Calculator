@@ -47,35 +47,62 @@
             android:ems="10"
             android:inputType="numberDecimal" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/credit_year_hint"
-            android:textSize="16sp"
-            android:textStyle="bold|italic"
-            android:layout_marginStart="4dp" />
+            android:orientation="horizontal">
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-        <EditText
-            android:id="@+id/textYearCredit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/credit_year_hint"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toTopOf="@+id/textYearCredit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/credit_month_hint"
-            android:textSize="16sp"
-            android:textStyle="bold|italic"
-            android:layout_marginStart="4dp" />
+                <EditText
+                    android:id="@+id/textYearCredit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </android.support.constraint.ConstraintLayout>
 
-        <EditText
-            android:id="@+id/textMonthCredit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/credit_month_hint"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toTopOf="@+id/textMonthCredit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/textMonthCredit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
 
         <ToggleButton
             android:id="@+id/CreditTypePayment"

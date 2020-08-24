@@ -1,4 +1,4 @@
-package com.vmb.financialcalculator;
+package com.vmbeshenov.financialcalculator;
 
 import org.junit.Test;
 

@@ -105,7 +105,7 @@
         </LinearLayout>
 
         <ToggleButton
-            android:id="@+id/CreditTypePayment"
+            android:id="@+id/TypePaymentCredit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#D1C4E9"

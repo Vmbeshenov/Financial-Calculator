@@ -1,4 +1,4 @@
-package com.vmb.financialcalculator;
+package com.vmbeshenov.financialcalculator;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

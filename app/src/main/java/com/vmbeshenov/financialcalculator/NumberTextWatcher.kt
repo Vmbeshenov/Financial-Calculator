@@ -1,4 +1,4 @@
-package com.vmb.financialcalculator
+package com.vmbeshenov.financialcalculator
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,26 +8,26 @@ import java.text.DecimalFormat
 import java.text.ParseException
 
 class NumberTextWatcher(editText: EditText) : TextWatcher {
-    private val df: DecimalFormat
-    private val dfnd: DecimalFormat
+
+    private val decimalFormatWithDot: DecimalFormat = DecimalFormat("#,###.##")
+    private val decimalFormat: DecimalFormat = DecimalFormat("#,###")
     private var hasFractionalPart: Boolean
     private val editText: EditText
-    override fun afterTextChanged(s: Editable) {
+
+    override fun afterTextChanged(numberText: Editable) {
         editText.removeTextChangedListener(this)
         try {
-            val inilen: Int
-            val endlen: Int
-            inilen = editText.text.length
-            val v = s.toString().replace(df.decimalFormatSymbols.groupingSeparator.toString(), "")
-            val n = df.parse(v)
+            val initialLength: Int = editText.text.length
+            val numberString = numberText.toString().replace(decimalFormatWithDot.decimalFormatSymbols.groupingSeparator.toString(), "")
+            val finalNumber = decimalFormatWithDot.parse(numberString)
             val cp = editText.selectionStart
             if (hasFractionalPart) {
-                editText.setText(df.format(n))
+                editText.setText(decimalFormatWithDot.format(finalNumber))
             } else {
-                editText.setText(dfnd.format(n))
+                editText.setText(decimalFormat.format(finalNumber))
             }
-            endlen = editText.text.length
-            val sel = cp + (endlen - inilen)
+            val finalLength: Int = editText.text.length
+            val sel = cp + (finalLength - initialLength)
             if (sel > 0 && sel <= editText.text.length) {
                 editText.setSelection(sel)
             } else {
@@ -41,12 +41,12 @@ class NumberTextWatcher(editText: EditText) : TextWatcher {
 
     override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
     override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-        hasFractionalPart = s.toString().contains(df.decimalFormatSymbols.decimalSeparator.toString())
+        hasFractionalPart = s.toString().contains(decimalFormatWithDot.decimalFormatSymbols.decimalSeparator.toString())
     }
 
     companion object {
         private const val TAG = "NumberTextWatcher"
-        fun GetStringInView(dataEditText: View): String {
+        fun getStringInView(dataEditText: View): String {
             var data = (dataEditText as EditText).text.toString()
             if (data == "") {
                 data = "0"
@@ -57,9 +57,7 @@ class NumberTextWatcher(editText: EditText) : TextWatcher {
     }
 
     init {
-        df = DecimalFormat("#,###.##")
-        df.isDecimalSeparatorAlwaysShown = true
-        dfnd = DecimalFormat("#,###")
+        decimalFormatWithDot.isDecimalSeparatorAlwaysShown = true
         this.editText = editText
         hasFractionalPart = false
     }

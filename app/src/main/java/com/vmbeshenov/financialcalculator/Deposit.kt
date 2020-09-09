@@ -4,19 +4,22 @@ import java.io.Serializable
 
 class Deposit : Serializable {
 
-    private var initialSum = 0.0
-    private var interestRate = 0.0
-    private var year = 0
-    private var month = 0
-    private var additionalPayment = 0.0
-    var total = 0.0
+    var initialSum: Double = 100000.0
+    var interestRate: Double = 7.75
+    var year = 5
+    var month = 0
+    var additionalPayment: Double = 0.0
+
+    var capitalization = false
+
+    var total: Double = 0.0
         private set
-    var profit = 0.0
+    var profit: Double = 0.0
         private set
-    var amountOfAdditionalPayments = 0.0
+    var amountOfAdditionalPayments: Double = 0.0
         private set
 
-    fun calculateDeposit(capitalization: Boolean) {
+    fun calculateDeposit() {
 
         if (capitalization) {
             total = initialSum
@@ -34,25 +37,5 @@ class Deposit : Serializable {
         }
 
         profit = total - initialSum - amountOfAdditionalPayments
-    }
-
-    fun setInitialSum(initial_sum: String) {
-        this.initialSum = initial_sum.toDouble()
-    }
-
-    fun setInterestRate(interest_rate: String) {
-        this.interestRate = interest_rate.toDouble()
-    }
-
-    fun setYear(year: String) {
-        this.year = year.toInt()
-    }
-
-    fun setMonth(month: String) {
-        this.month = month.toInt()
-    }
-
-    fun setAdditionalPayment(additionalPayment: String) {
-        this.additionalPayment = additionalPayment.toDouble()
     }
 }

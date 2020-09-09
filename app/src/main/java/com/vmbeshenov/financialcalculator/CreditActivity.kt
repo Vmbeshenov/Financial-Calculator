@@ -5,10 +5,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.EditText
-import android.widget.ToggleButton
 import com.vmbeshenov.financialcalculator.NumberTextWatcher.Companion.getStringInView
 
 class CreditActivity : AppCompatActivity() {
+
+    private val credit = Credit()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,27 +17,25 @@ class CreditActivity : AppCompatActivity() {
 
         val initialSumText = findViewById<EditText>(R.id.textInitialSumCredit)
         initialSumText.addTextChangedListener(NumberTextWatcher(initialSumText))
-        initialSumText.setText(R.string.credit_initial_sum)
+        initialSumText.setText(credit.initialSum.toLong().toString())
 
         val interestRateSumText = findViewById<EditText>(R.id.textInterestRateCredit)
-        interestRateSumText.setText(R.string.credit_interest_rate)
+        interestRateSumText.setText(credit.interestRate.toString())
 
         val yearText = findViewById<EditText>(R.id.textYearCredit)
-        yearText.setText(R.string.credit_year)
+        yearText.setText(credit.year.toString())
 
         val monthText = findViewById<EditText>(R.id.textMonthCredit)
-        monthText.setText(R.string.credit_month)
+        monthText.setText(credit.month.toString())
     }
 
     fun onClickCalculateCredit(view: View?) {
-        val credit = Credit()
-        credit.setInitialSum(getStringInView(findViewById<View>(R.id.textInitialSumCredit)))
-        credit.setInterestRate(getStringInView(findViewById<View>(R.id.textInterestRateCredit)))
-        credit.setYear(getStringInView(findViewById<View>(R.id.textYearCredit)))
-        credit.setMonth(getStringInView(findViewById<View>(R.id.textMonthCredit)))
+        credit.initialSum = getStringInView(findViewById(R.id.textInitialSumCredit)).toDouble()
+        credit.interestRate = getStringInView(findViewById(R.id.textInterestRateCredit)).toDouble()
+        credit.year = getStringInView(findViewById(R.id.textYearCredit)).toInt()
+        credit.month = getStringInView(findViewById(R.id.textMonthCredit)).toInt()
 
-        val annuityPaymentType = (findViewById<View>(R.id.TypePaymentCredit) as ToggleButton).isChecked
-        credit.calculateCredit(annuityPaymentType)
+        credit.calculateCredit()
 
         val intent = Intent(this, CreditResultActivity::class.java)
         intent.putExtra(Credit::class.java.simpleName, credit)

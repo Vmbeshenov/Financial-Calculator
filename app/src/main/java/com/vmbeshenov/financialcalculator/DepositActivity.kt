@@ -10,38 +10,41 @@ import com.vmbeshenov.financialcalculator.NumberTextWatcher.Companion.getStringI
 
 class DepositActivity : AppCompatActivity() {
 
+    private val deposit = Deposit()
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deposit)
 
         val initialSumText = findViewById<EditText>(R.id.textInitialSum)
         initialSumText.addTextChangedListener(NumberTextWatcher(initialSumText))
-        initialSumText.setText(R.string.deposit_initial_sum)
+        initialSumText.setText(deposit.initialSum.toLong().toString())
 
         val interestRateSumText = findViewById<EditText>(R.id.textInterestRate)
-        interestRateSumText.setText(R.string.deposit_interest_rate)
+        interestRateSumText.setText(deposit.interestRate.toString())
 
         val yearText = findViewById<EditText>(R.id.textYear)
-        yearText.setText(R.string.deposit_year)
+        yearText.setText(deposit.year.toString())
 
         val monthText = findViewById<EditText>(R.id.textMonth)
-        monthText.setText(R.string.deposit_month)
+        monthText.setText(deposit.month.toString())
 
         val additionalSumText = findViewById<EditText>(R.id.textAdditionalPayment)
         additionalSumText.addTextChangedListener(NumberTextWatcher(additionalSumText))
-        additionalSumText.setText(R.string.deposit_additional_sum)
+        additionalSumText.setText(deposit.additionalPayment.toLong().toString())
     }
 
     fun onClickCalculateDeposit(view: View?) {
-        val deposit = Deposit()
-        deposit.setInitialSum(getStringInView(findViewById<View>(R.id.textInitialSum)))
-        deposit.setInterestRate(getStringInView(findViewById<View>(R.id.textInterestRate)))
-        deposit.setYear(getStringInView(findViewById<View>(R.id.textYear)))
-        deposit.setMonth(getStringInView(findViewById<View>(R.id.textMonth)))
-        deposit.setAdditionalPayment(getStringInView(findViewById<View>(R.id.textAdditionalPayment)))
 
-        val capitalization = (findViewById<View>(R.id.checkBoxCapitalization) as CheckBox).isChecked
-        deposit.calculateDeposit(capitalization)
+        deposit.initialSum = getStringInView(findViewById(R.id.textInitialSum)).toDouble()
+        deposit.interestRate = getStringInView(findViewById(R.id.textInterestRate)).toDouble()
+        deposit.year = getStringInView(findViewById(R.id.textYear)).toInt()
+        deposit.month = getStringInView(findViewById(R.id.textMonth)).toInt()
+        deposit.additionalPayment = getStringInView(findViewById(R.id.textAdditionalPayment)).toDouble()
+
+        deposit.capitalization = (findViewById<View>(R.id.checkBoxCapitalization) as CheckBox).isChecked
+        deposit.calculateDeposit()
 
         val intent = Intent(this, DepositResultActivity::class.java)
         intent.putExtra(Deposit::class.java.simpleName, deposit)

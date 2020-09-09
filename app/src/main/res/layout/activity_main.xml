@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/titleTextView"
+        android:id="@+id/titleMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_main_menu"
@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/titleTextView"
-        app:layout_constraintStart_toStartOf="@+id/titleTextView"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView">
+        app:layout_constraintEnd_toEndOf="@+id/titleMain"
+        app:layout_constraintStart_toStartOf="@+id/titleMain"
+        app:layout_constraintTop_toBottomOf="@+id/titleMain">
 
         <Button
             android:id="@+id/buttonStartDeposit"
